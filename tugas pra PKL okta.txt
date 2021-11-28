@@ -1,0 +1,34 @@
+Laundry Managament
+	- Informasi Laundry
+	- Informasi Pelangan laundry (tb.pelanggan)
+		- kolom : id; nama_pelanggan: username; email; no_hp; alamat; jenis_kelamin; password
+
+	- Jadwal Laundry Selesai (tb.transaksi)
+		- kolom : id; id_pelangga; id_kategori;id_pickup;jarak_rumah; kode_transaksi; berat_laundry; total;uang_dp; tgl_masuk; tgl_selesai
+
+	- Harga  berdasarkan Type Laundry (*bebas) (tb.kategori laundry: id, nama kategori, harga, gambar, cuplikan, deskripsi
+			- laundry kiloan, express, boneka, selimut dan seprei
+
+	- Terdapat optional Jasa Antar-Jemput ( tarif Bebas) (tb.pickup)
+			- kolom : id; nama_jasa; harga_per_km
+
+	- terdapat dashboard admin untuk mengelola transaksi  (tb.transaksi)
+		- kolom : id; id_pelangga; id_kategori; kode_transaksi; berat_laundry; total;uang_dp; tgl_masuk; tgl_selesai; status
+
+	- Terdapat Fitur DP total Laundry (tb.transaksi)
+		- kolom : id; id_pelangga; id_kategori; kode_transaksi; berat_laundry; total;uang_dp; tgl_masuk; tgl_selesai; status
+
+	- Terdapat fitur cancel order jika laundry belum dikerjakan
+
+	- Terdapat diagram pada dashboard admin untuk menggambarkan log transaksi 
+
+* Dikerjakan "BEBAS" menggunakan bahasa pemrograman apapun, Library Apapun, Framework Apapun ataupun Stack Tech apapun 
+tanpa membatasi type device tujuan (contohnya: Mobile, Web, maupun Desktop)
+
+* EST Pengerjaan 7 Hari Setelah Tugas Diterima
+
+================================================================================================================
+=============== Jika Kurang Jelas dapat menghubungi ( WA/ TELEGRAM :  SUKMA - 087762586631 ) ===================
+================================================================================================================
+================================================SELAMAT MENGERJAKAN=============================================
+================================================================================================================
