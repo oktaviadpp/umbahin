@@ -66,18 +66,17 @@ class TransaksiController extends Controller
 
         $transaksi = TransaksiModel::with('pelanggan', 'laundrykat', 'pickup')->get();
 
-        foreach ($transaksi as $tran) {
-            $kategori = LaundryKatModel::find($tran['id_kategori']);
-            $pickup = PickupModel::find($tran['id_pickup']);
-            $masuk = Carbon::now();
+        $kategori = LaundryKatModel::find($request['kategori']);
+        $pickup = PickupModel::find($request['pickup']);
+        $masuk = Carbon::now();
 
-            $hargaKategori = $kategori->harga;
-            $hargaPickup = $pickup->harga;
-            // $tgl_selesai = Carbon::now()->addDay($kategori->durasi)->toDateString();
+        $hargaKategori = $kategori->harga;
+        $hargaPickup = $pickup->harga;
+        $tgl_selesai = Carbon::now()->addDay($kategori->durasi)->toDateString();
 
-            $total = ($hargaKategori * $request['berat']) + ($hargaPickup * $request['jarak']);
-            $sisa = $total - $request['dp'];
-        }
+        $total = ($hargaKategori * $request['berat']) + ($hargaPickup * $request['jarak']);
+        $sisa = $total - $request['dp'];
+
         $transaksi = TransaksiModel::create([
             'id_pelanggan' => $request->username,
             'id_kategori' => $request->kategori,
@@ -88,7 +87,7 @@ class TransaksiController extends Controller
             'sisa' => $sisa,
             'uang_dp' => $request->dp,
             'tgl_msk' => $masuk,
-            // 'tgl_selesai' => $tgl_selesai,
+            'tgl_selesai' => $tgl_selesai,
             'tgl_pelunasan' => $request->tgl_pelunasan,
             'status' => $request->status,
         ]);
